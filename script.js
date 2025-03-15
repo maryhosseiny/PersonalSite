@@ -1,4 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Dark mode functionality
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const themeMenu = document.getElementById('themeMenu');
+    const darkModeToggle = document.getElementById('darkModeToggle');
+
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        darkModeToggle.checked = savedTheme === 'dark';
+    }
+
+    // Toggle theme menu
+    themeToggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        themeMenu.classList.toggle('active');
+    });
+
+    // Close theme menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!themeMenu.contains(e.target) && !themeToggleBtn.contains(e.target)) {
+            themeMenu.classList.remove('active');
+        }
+    });
+
+    // Handle dark mode toggle
+    darkModeToggle.addEventListener('change', () => {
+        const theme = darkModeToggle.checked ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    });
+
     // Tab switching functionality
     const tabs = document.querySelectorAll('.tab-link');
     const sections = document.querySelectorAll('.section');

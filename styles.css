@@ -5,18 +5,54 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bg-color: #fff;
+    --text-color: #333;
+    --text-color-secondary: #666;
+    --text-color-accent: #000;
+    --border-color: #e5e5e5;
+    --card-bg: #ffffff;
+    --card-border: #eaeaea;
+    --card-hover-shadow: rgba(0, 0, 0, 0.1);
+    --tech-tag-bg: #f5f5f5;
+    --tech-tag-text: #666;
+    --button-bg: #000;
+    --button-text: #fff;
+    --modal-bg: #fff;
+    --modal-overlay: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --text-color-secondary: #b3b3b3;
+    --text-color-accent: #ffffff;
+    --border-color: #333;
+    --card-bg: #2d2d2d;
+    --card-border: #404040;
+    --card-hover-shadow: rgba(0, 0, 0, 0.3);
+    --tech-tag-bg: #404040;
+    --tech-tag-text: #e0e0e0;
+    --button-bg: #ffffff;
+    --button-text: #000;
+    --modal-bg: #2d2d2d;
+    --modal-overlay: rgba(0, 0, 0, 0.7);
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #fff;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Profile Header */
 .profile-header {
     padding: 20px 0;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid var(--border-color);
     margin-bottom: 1px;
+    background-color: var(--bg-color);
 }
 
 .profile-container {
@@ -34,13 +70,13 @@ body {
 .username {
     font-size: 32px;
     font-weight: 400;
-    color: #000;
+    color: var(--text-color);
     margin-right: auto;
 }
 
 .contact-btn {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--button-bg);
+    color: var(--button-text);
     border: none;
     padding: 8px 24px;
     border-radius: 4px;
@@ -54,15 +90,16 @@ body {
     background: none;
     border: none;
     font-size: 24px;
-    color: #000;
+    color: var(--text-color);
     cursor: pointer;
     padding: 0 10px;
 }
 
 /* Tab Navigation */
 .tab-nav {
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid var(--border-color);
     margin-bottom: 30px;
+    background-color: var(--bg-color);
 }
 
 .tab-container {
@@ -76,7 +113,7 @@ body {
 
 .tab-link {
     text-decoration: none;
-    color: #666;
+    color: var(--text-color-secondary);
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -86,13 +123,9 @@ body {
     transition: color 0.3s ease;
 }
 
-.tab-link:hover {
-    color: #000;
-}
-
+.tab-link:hover,
 .tab-link.active {
-    color: #000;
-    font-weight: 600;
+    color: var(--text-color);
 }
 
 .tab-link.active::after {
@@ -102,7 +135,7 @@ body {
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: #000;
+    background-color: var(--text-color);
 }
 
 /* Remove old navbar styles */
@@ -138,11 +171,12 @@ main {
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
+    color: var(--text-color);
 }
 
 .hero p {
     font-size: 1.2rem;
-    color: #666;
+    color: var(--text-color-secondary);
 }
 
 /* Gallery Grid - VSCO Style */
@@ -186,7 +220,7 @@ main {
 
 /* Gallery section styling */
 #gallery {
-    background-color: #fff;
+    background-color: var(--bg-color);
     min-height: 100vh;
     padding: 1rem;
     overflow: hidden;
@@ -209,12 +243,12 @@ main {
 /* Project Cards */
 .project-card {
     width: 100%;
-    background: #ffffff;
-    border: 1px solid #eaeaea;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 12px;
     padding: 2.5rem;
     transition: all 0.3s ease;
-    color: inherit;
+    color: var(--text-color);
     display: block;
     position: relative;
     text-decoration: none;
@@ -222,26 +256,24 @@ main {
 
 .project-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-    border-color: #000;
+    box-shadow: 0 12px 24px var(--card-hover-shadow);
+    border-color: var(--text-color);
 }
 
 .project-title {
     text-decoration: none;
     display: block;
-    margin-right: 100px; /* Space for GitHub buttons */
+    margin-right: 100px;
 }
 
-.project-title h3 {
-    font-size: 2rem;
-    margin-bottom: 1.2rem;
-    color: #000;
-    font-weight: 600;
+.project-title h3, 
+.project-card h3 {
+    color: var(--text-color);
     transition: color 0.3s ease;
 }
 
 .project-title:hover h3 {
-    color: #666;
+    opacity: 0.7;
 }
 
 .project-links {
@@ -256,17 +288,17 @@ main {
     display: flex;
     align-items: center;
     padding: 0.5rem;
-    border: 1px solid #eaeaea;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
-    color: #333;
+    color: var(--text-color);
     text-decoration: none;
     transition: all 0.2s ease;
-    background: #fff;
+    background: var(--card-bg);
 }
 
 .github-link:hover {
-    background: #f5f5f5;
-    border-color: #000;
+    background: var(--tech-tag-bg);
+    border-color: var(--text-color);
     transform: translateY(-2px);
 }
 
@@ -284,16 +316,8 @@ main {
     font-size: 0.8rem;
 }
 
-.project-card h3 {
-    display: block;
-    font-size: 2rem;
-    margin-bottom: 1.2rem;
-    color: #000;
-    font-weight: 600;
-}
-
 .project-card p {
-    color: #666;
+    color: var(--text-color-secondary);
     line-height: 1.6;
     margin-bottom: 1.8rem;
     font-size: 1.1rem;
@@ -308,18 +332,18 @@ main {
 }
 
 .project-tech span {
-    background: #f5f5f5;
+    background: var(--tech-tag-bg);
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
     font-size: 0.9rem;
-    color: #666;
+    color: var(--tech-tag-text);
     font-weight: 500;
 }
 
 /* Welcome section specific styles */
 #welcome {
     padding-top: 40px;
-    background-color: #fff;
+    background-color: var(--bg-color);
 }
 
 /* Responsive Design */
@@ -430,14 +454,14 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--modal-overlay);
     z-index: 1000;
     backdrop-filter: blur(5px);
 }
 
 .modal-content {
     position: relative;
-    background-color: #fff;
+    background-color: var(--modal-bg);
     margin: 100px auto;
     padding: 30px;
     width: 90%;
@@ -452,19 +476,19 @@ main {
     top: 15px;
     font-size: 24px;
     font-weight: bold;
-    color: #666;
+    color: var(--text-color-secondary);
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .close-btn:hover {
-    color: #000;
+    color: var(--text-color-accent);
 }
 
 .modal h2 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #000;
+    color: var(--text-color-accent);
 }
 
 .contact-links {
@@ -479,14 +503,14 @@ main {
     gap: 12px;
     padding: 12px;
     text-decoration: none;
-    color: #333;
-    background: #f5f5f5;
+    color: var(--text-color);
+    background: var(--tech-tag-bg);
     border-radius: 8px;
     transition: all 0.3s ease;
 }
 
 .contact-link:hover {
-    background: #eaeaea;
+    background: var(--card-border);
     transform: translateY(-2px);
 }
 
@@ -494,4 +518,96 @@ main {
     font-size: 20px;
     width: 24px;
     text-align: center;
+}
+
+/* Theme Toggle Styles */
+.theme-toggle {
+    position: relative;
+    display: inline-block;
+}
+
+.theme-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px;
+    min-width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.theme-menu.active {
+    display: block;
+}
+
+.theme-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.theme-option span {
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+/* Switch styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #000;
+}
+
+[data-theme="dark"] input:checked + .slider {
+    background-color: #fff;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 } 
