@@ -102,36 +102,58 @@ main {
     color: #666;
 }
 
-/* Gallery Grid */
+/* Gallery Grid - VSCO Style */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 1rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    padding: 16px;
+    max-width: 2000px;
+    margin: 0 auto;
 }
 
 .gallery-item {
     position: relative;
+    border-radius: 3px;
     overflow: hidden;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-    aspect-ratio: 1;
     cursor: pointer;
+    transition: all 0.3s ease;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .gallery-item img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
     object-fit: cover;
-    transition: transform 0.3s ease;
 }
 
 .gallery-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
 .gallery-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.03);
+}
+
+/* Gallery section styling */
+#gallery {
+    background-color: #fafafa;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+#gallery h2 {
+    text-align: center;
+    padding: 2rem 0;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #333;
+    font-size: 1.8rem;
+    text-transform: uppercase;
 }
 
 /* Projects Container */
@@ -199,5 +221,43 @@ main {
     
     .gallery-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    #gallery {
+        padding: 0.5rem;
+    }
+}
+
+/* VSCO-style responsive adjustments */
+@media (max-width: 1600px) {
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+}
+
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    #gallery {
+        padding: 0.5rem;
     }
 } 
