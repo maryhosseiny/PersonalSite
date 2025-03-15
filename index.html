@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helena's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Helena</div>
+        <div class="nav-links">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#gallery" class="nav-link">Gallery</a>
+            <a href="#game-design" class="nav-link">Game Design</a>
+            <a href="#projects" class="nav-link">Projects</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="section active">
+            <div class="hero">
+                <h1>Welcome to My World</h1>
+                <p>Developer • Designer • Creator</p>
+            </div>
+        </section>
+
+        <section id="gallery" class="section">
+            <h2>My Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_6828.jpg" alt="Gallery Image 1" onerror="this.style.border='2px solid red'; this.style.padding='10px'; this.alt='Failed to load image'">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_7972.jpg" alt="Gallery Image 2" onerror="this.style.border='2px solid red'; this.style.padding='10px'; this.alt='Failed to load image'">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_8676.jpg" alt="Gallery Image 3" onerror="this.style.border='2px solid red'; this.style.padding='10px'; this.alt='Failed to load image'">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_9869.jpg" alt="Gallery Image 4" onerror="this.style.border='2px solid red'; this.style.padding='10px'; this.alt='Failed to load image'">
+                </div>
+            </div>
+        </section>
+
+        <section id="game-design" class="section">
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>Game Project 1</h3>
+                    <p>Description of your game design project goes here.</p>
+                </div>
+                <!-- Add more game design projects as needed -->
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>Project 1</h3>
+                    <p>Description of your general project goes here.</p>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 
