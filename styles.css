@@ -151,6 +151,7 @@ main {
     padding: 16px;
     max-width: 2000px;
     margin: 0 auto;
+    column-fill: balance;
 }
 
 .gallery-item {
@@ -160,15 +161,18 @@ main {
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease;
-    line-height: 0; /* Remove extra space below images */
+    line-height: 0;
+    display: inline-block;
+    width: 100%;
 }
 
 .gallery-item img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     transition: transform 0.4s ease;
-    object-fit: cover; /* Ensures consistent image display */
+    object-fit: cover;
+    aspect-ratio: auto;
 }
 
 .gallery-item:hover {
@@ -184,6 +188,7 @@ main {
     background-color: #fff;
     min-height: 100vh;
     padding: 1rem;
+    overflow: hidden;
 }
 
 #gallery h2 {
