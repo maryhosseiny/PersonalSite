@@ -29,7 +29,7 @@
 
         <section id="gallery" class="section">
             <h2>My Gallery</h2>
-            <div class="gallery-grid">
+            <div class="gallery-grid" id="gallery-grid">
                 <div class="gallery-item">
                     <img src="assets/images/IMG_0249.JPG" alt="Gallery Image">
                 </div>
@@ -84,6 +84,84 @@
                 <div class="gallery-item">
                     <img src="assets/images/IMG_9869.jpg" alt="Gallery Image">
                 </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_4994.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_6284.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_7377.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_6482.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_6777.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/EA472D3F-695F-4D63-91AE-0CB71FFD66F2.JPG" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_6281.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/1D7260CB-9A66-4B88-8669-1A474A1F93CA.JPG" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_6468_VSCO.JPG" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/1E1E0A2F-563E-4993-80AC-669F0EF4E8AE.JPG" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_5446.JPG" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_7964.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_7665.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_7587.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_7851.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_8316.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/3DCB9190-B034-40BF-BF18-D25A19623ADB.JPG" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_8354.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_9641.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_9187.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_9783.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_8985.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/325555F7-ADC3-429B-992E-18BA43BDC774.JPG" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_0048.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_0216.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/IMG_9989.jpg" alt="Gallery Image">
+                </div>
             </div>
         </section>
 
@@ -109,5 +187,21 @@
     </main>
 
     <script src="script.js"></script>
+    <script>
+        // Function to shuffle the gallery items
+        function shuffleGallery() {
+            const gallery = document.getElementById('gallery-grid');
+            const items = Array.from(gallery.children);
+            
+            // Fisher-Yates shuffle algorithm
+            for (let i = items.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                gallery.appendChild(items[j]);
+            }
+        }
+
+        // Shuffle when the page loads
+        window.addEventListener('load', shuffleGallery);
+    </script>
 </body>
 </html> 
