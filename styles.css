@@ -195,17 +195,18 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
 }
 
 /* Project Cards */
 .project-card {
+    width: 100%;
     background: #ffffff;
     border: 1px solid #eaeaea;
     border-radius: 12px;
-    padding: 2rem;
+    padding: 2.5rem;
     transition: all 0.3s ease;
     color: inherit;
     display: block;
@@ -221,19 +222,26 @@ main {
 
 .project-title {
     text-decoration: none;
-    color: #000;
-    transition: color 0.3s ease;
-    display: inline-block;
+    display: block;
+    margin-right: 100px; /* Space for GitHub buttons */
 }
 
-.project-title:hover {
+.project-title h3 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    color: #000;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.project-title:hover h3 {
     color: #666;
 }
 
 .project-links {
     position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
+    top: 2.5rem;
+    right: 2.5rem;
     display: flex;
     gap: 0.5rem;
 }
@@ -271,8 +279,9 @@ main {
 }
 
 .project-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
     color: #000;
     font-weight: 600;
 }
@@ -280,8 +289,9 @@ main {
 .project-card p {
     color: #666;
     line-height: 1.6;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.8rem;
     font-size: 1.1rem;
+    max-width: 90%;
 }
 
 .project-tech {
